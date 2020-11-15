@@ -10,4 +10,9 @@
         android:name="com.example.projekt.AddFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/detalisFragment"
+        android:name="com.example.projekt.DetalisFragment"
+        android:label="fragment_detalis"
+        tools:layout="@layout/fragment_detalis" />
 </navigation>
