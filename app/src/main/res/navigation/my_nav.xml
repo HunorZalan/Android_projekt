@@ -3,27 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/addFragment">
+    app:startDestination="@id/listFragment">
 
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.projekt.fragments.AddFragment"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
     <fragment
         android:id="@+id/detalisFragment"
         android:name="com.example.projekt.fragments.DetalisFragment"
         android:label="fragment_detalis"
-        tools:layout="@layout/fragment_detalis" />
+        tools:layout="@layout/fragment_detalis" >
+        <action
+            android:id="@+id/action_detalisFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.projekt.fragments.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_addFragment"
+            app:destination="@id/addFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_listFragment_to_detalisFragment"
+            app:destination="@id/detalisFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_listFragment_to_informationFragment"
+            app:destination="@id/informationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
     <fragment
         android:id="@+id/informationFragment"
         android:name="com.example.projekt.fragments.InformationFragment"
         android:label="fragment_information"
-        tools:layout="@layout/fragment_information" />
+        tools:layout="@layout/fragment_information" >
+        <action
+            android:id="@+id/action_informationFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
 
 </navigation>

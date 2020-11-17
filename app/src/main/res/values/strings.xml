@@ -2,5 +2,7 @@
     <string name="app_name">Food management</string>
 
     <string name="text1">Where to eat?</string>
+    <string name="text2">List of food</string>
+
 
 </resources>
