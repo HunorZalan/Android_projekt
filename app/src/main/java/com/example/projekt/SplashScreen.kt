@@ -16,7 +16,7 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
         Log.d(savedInstanceState.toString(), "Error Splash!")
 
-        //supportActionBar?.hide()
+        supportActionBar?.hide()
 
         //image = findViewById(R.id.img)
         img.alpha = 0f

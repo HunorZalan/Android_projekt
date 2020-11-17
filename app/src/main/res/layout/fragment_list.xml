@@ -19,8 +19,8 @@
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:focusable="true"
-        android:textColor="@color/green"/>
-
+        android:textColor="@color/green"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"

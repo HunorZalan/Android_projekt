@@ -4,5 +4,8 @@
     <string name="text1">Where to eat?</string>
     <string name="text2">List of food</string>
 
+    <string name="text3">List</string>
+    <string name="text4">Add</string>
+    <string name="text5">Information</string>
 
 </resources>

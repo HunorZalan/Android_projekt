@@ -80,8 +80,9 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.4.1"
 
     // Others
-    /*implementation 'androidx.gridlayout:gridlayout:1.0.0'
-    implementation 'com.google.android.gms:play-services-ads:19.1.0'
-    implementation 'com.google.android.gms:play-services-maps:17.0.0'*/
+    implementation 'com.google.android.material:material:1.2.0'
+    /*implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'*/
 
 }
