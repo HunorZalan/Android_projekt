@@ -1,8 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AddFragment">
+    tools:context=".fragments.ListFragment"
+    android:background="@color/purple"
+    android:padding="24sp">
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/text6"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:focusable="true"
+        android:textColor="@color/green" />
+
+    <EditText
+        android:id="@+id/add_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/text9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        android:layout_marginTop="45dp"
+        android:textSize="20sp"/>
+
+    <Spinner
+        android:id="@+id/add_foods"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/foods_arrays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_name"
+        android:layout_marginTop="45dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/add_calorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="@string/text10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_foods"
+        android:shadowColor="@color/teal_200"
+        android:layout_marginTop="45dp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/add_button"
+        android:text="@string/button1"
+        android:textColor="#333333"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/addfood_shape"
+        android:shadowColor="#CFCFCF"
+        android:shadowRadius="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_calorie"
+        android:layout_marginTop="45dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

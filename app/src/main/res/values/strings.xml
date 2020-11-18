@@ -2,10 +2,26 @@
     <string name="app_name">Food management</string>
 
     <string name="text1">Where to eat?</string>
+
     <string name="text2">List of food</string>
+    <string name="text6">Add new food</string>
+    <string name="text7">Information</string>
+    <string name="text8">Title</string>
+
+    <string name="text9">New fruit name</string>
+    <string name="text10">0</string>
+    <string name="button1">ADD FOOD</string>
 
     <string name="text3">List</string>
     <string name="text4">Add</string>
     <string name="text5">Information</string>
+
+    <string-array name="foods_arrays">
+        <item>Fruit</item>
+        <item>Fast Food</item>
+        <item>Vegetable</item>
+        <item>Seafood</item>
+
+    </string-array>
 
 </resources>
