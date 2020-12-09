@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.projekt.fragments.AddFragment
 import com.example.projekt.fragments.InformationFragment
 import com.example.projekt.fragments.ListFragment
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun replaceFragment(fragment : Fragment){
         if (fragment != null){
-            val transaction = supportFragmentManager.beginTransaction()
+            val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, fragment)
             transaction.commit()
         }

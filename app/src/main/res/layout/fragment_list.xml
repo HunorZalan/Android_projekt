@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ListFragment"
-    android:background="@color/purple_200">
-
+    android:background="@color/purple_200"
+    android:padding="15sp">
 
     <TextView
         android:id="@+id/text"
@@ -19,8 +19,7 @@
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:focusable="true"
-        android:textColor="@color/green"
-        />
+        android:textColor="@color/green" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
