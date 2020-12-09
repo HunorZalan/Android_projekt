@@ -18,6 +18,7 @@ class SplashFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        requireActivity().findViewById<View>(R.id.bottom_nav).visibility = View.GONE
         var view : View = inflater.inflate(R.layout.fragment_splash, container, false)
 
         view.img.alpha = 0f

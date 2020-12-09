@@ -22,21 +22,11 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"/>
         <action
-            android:id="@+id/action_listFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"/>
-        <action
             android:id="@+id/action_listFragment_to_profileFragment"
             app:destination="@id/profileFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"/>
     </fragment>
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.example.projekt.fragments.FavoriteFragment"
-        android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.projekt.fragments.ProfileFragment"

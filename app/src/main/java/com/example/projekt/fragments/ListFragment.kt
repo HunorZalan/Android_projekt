@@ -18,6 +18,7 @@ class ListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        requireActivity().findViewById<View>(R.id.bottom_nav).visibility = View.VISIBLE
         var view: View = inflater.inflate(R.layout.fragment_list, container, false)
 
         return view

@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekt">
 
-        <activity android:name=".aktivitys.MainActivity">
+        <activity android:name=".aktivitys.MainActivity"
+            android:theme="@style/MyScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

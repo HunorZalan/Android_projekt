@@ -4,10 +4,15 @@
     <string name="text1">Where to eat?</string>
 
     <string name="text2">List</string>
-    <string name="text3">Favorite</string>
     <string name="text4">Profile</string>
 
     <string name="text5">List of Restaurants</string>
 
+    <string name="text3">Register</string>
+    <string name="text6">Name</string>
+    <string name="text7">Address</string>
+    <string name="text8">Phone Number</string>
+    <string name="text9">E-mail</string>
+    <string name="button1">REGISTER</string>
 
 </resources>

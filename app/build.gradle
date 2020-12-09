@@ -79,6 +79,10 @@ dependencies {
     // Splash
     implementation "com.airbnb.android:lottie:3.4.1"
 
+    // Gradle
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
     // Others
     implementation 'com.google.android.material:material:1.2.0'
     /*implementation 'com.google.android.gms:play-services-ads:19.1.0'

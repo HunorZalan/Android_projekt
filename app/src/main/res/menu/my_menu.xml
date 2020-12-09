@@ -3,11 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/listFragment"
         android:title="@string/text2"
-        android:icon="@drawable/list_selector"/>
-    <item android:id="@+id/favoriteFragment"
-        android:title="@string/text3"
-        android:icon="@drawable/info_selector"/>
+        android:icon="@drawable/ic_baseline_format_list"/>
     <item android:id="@+id/profileFragment"
         android:title="@string/text4"
-        android:icon="@drawable/add_selector"/>
+        android:icon="@drawable/ic_baseline_person"/>
 </menu>
