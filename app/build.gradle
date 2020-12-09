@@ -78,7 +78,7 @@ dependencies {
     // Splash
     implementation "com.airbnb.android:lottie:3.4.1"
 
-    // Gradle
+    // Glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 

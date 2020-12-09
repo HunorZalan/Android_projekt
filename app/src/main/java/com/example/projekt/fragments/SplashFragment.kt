@@ -1,5 +1,7 @@
 package com.example.projekt.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +11,9 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.projekt.R
 import kotlinx.android.synthetic.main.fragment_splash.view.*
+import java.util.prefs.AbstractPreferences
+
+private  lateinit var sharedPreferences: SharedPreferences
 
 class SplashFragment : Fragment() {
 
@@ -23,9 +28,15 @@ class SplashFragment : Fragment() {
 
         view.img.alpha = 0f
         view.img.animate().setDuration(7000).alpha(1f).withEndAction{
+            sharedPreferences = context?.getSharedPreferences("init", Context.MODE_PRIVATE)!!
+            val init = sharedPreferences.all
+            if (init.isEmpty()){
+                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_registerFragment)
+            }
+            else{
             Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_listFragment)
+            }
         }
-
 
         return view
     }

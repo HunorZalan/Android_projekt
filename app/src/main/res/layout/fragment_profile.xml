@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragments.ProfileFragment"
-        android:background="@color/Wheat"
+        android:background="@color/LightYellow"
         android:padding="35sp">
 
         <TextView
@@ -27,30 +27,30 @@
             android:text="@string/text10"
             app:layout_constraintTop_toBottomOf="@id/title"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/name"
+            app:layout_constraintEnd_toStartOf="@id/name_prof"
             android:layout_marginTop="40dp"
             android:textSize="20sp"
             android:textColor="@color/DarkGray"/>
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/name_prof"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginStart="20dp"
             android:text="@string/text6"
-            android:textSize="25sp"
+            android:textSize="15sp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/name_text"
             app:layout_constraintTop_toBottomOf="@id/title"
             android:textColor="@color/DarkOliveGreen"/>
 
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/img_prof"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_person"
-            app:layout_constraintTop_toBottomOf="@id/name"
+            android:src="@drawable/ic_baseline_favorite"
+            app:layout_constraintTop_toBottomOf="@id/name_prof"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="40dp"
@@ -62,25 +62,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text11"
-            app:layout_constraintTop_toBottomOf="@id/img"
+            app:layout_constraintTop_toBottomOf="@id/img_prof"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/address"
+            app:layout_constraintEnd_toStartOf="@id/address_prof"
             android:layout_marginTop="30dp"
             android:textSize="20sp"
             android:textColor="@color/DarkGray"/>
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/address_prof"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text7"
-            app:layout_constraintTop_toBottomOf="@id/img"
+            app:layout_constraintTop_toBottomOf="@id/img_prof"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@id/address_text"
             android:layout_marginTop="30dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOliveGreen"/>
 
         <TextView
@@ -90,13 +90,13 @@
             android:text="@string/text12"
             app:layout_constraintTop_toBottomOf="@id/address_text"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/phone"
+            app:layout_constraintEnd_toStartOf="@id/phone_prof"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textColor="@color/DarkGray" />
 
         <TextView
-            android:id="@+id/phone"
+            android:id="@+id/phone_prof"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text8"
@@ -105,7 +105,7 @@
             app:layout_constraintStart_toEndOf="@id/phone_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOliveGreen"/>
 
         <TextView
@@ -115,14 +115,14 @@
             android:text="@string/text13"
             app:layout_constraintTop_toBottomOf="@id/phone_text"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/email"
+            app:layout_constraintEnd_toStartOf="@id/email_prof"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textColor="@color/DarkGray"/>
 
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/email_prof"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text9"
@@ -131,8 +131,30 @@
             app:layout_constraintStart_toEndOf="@id/email_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOliveGreen"/>
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button3"
+            app:layout_constraintTop_toBottomOf="@id/email_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"
+            android:background="@drawable/registershape"/>
+
+        <Button
+            android:id="@+id/log_out"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button4"
+            app:layout_constraintTop_toBottomOf="@id/email_text"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"
+            android:background="@drawable/registershape"/>
 
         <!--<androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_fav"
@@ -140,10 +162,11 @@
             android:layout_height="match_parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="380dp"
-            app:layout_constraintTop_toBottomOf="@id/email_text"
+            android:layout_marginTop="440dp"
+            app:layout_constraintTop_toBottomOf="@id/edit"
             app:layout_constraintBottom_toBottomOf="parent"
             android:textSize="25sp"
             tools:listitem="@layout/costum_row"/>-->
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

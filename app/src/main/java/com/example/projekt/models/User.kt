@@ -1,6 +1,7 @@
 package com.example.projekt.models
 
 import android.os.Parcelable
+import android.widget.ImageView
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
@@ -9,7 +10,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "user_table")
 data class User(
     @PrimaryKey(autoGenerate = true)
-    val id : Int,
+    val id: Int,
     val username: String,
     val address: String,
     val email: String,

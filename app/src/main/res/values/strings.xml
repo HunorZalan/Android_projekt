@@ -17,6 +17,9 @@
     <string name="button1">REGISTER</string>
     <string name="button2">CHANGE</string>
 
+    <string name="button3">EDIT</string>
+    <string name="button4">LOG OUT</string>
+
     <string name="text10">Name:</string>
     <string name="text11">Address:</string>
     <string name="text12">Phone Number:</string>
