@@ -8,18 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.projekt.R
 
-
-class InformationFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(savedInstanceState.toString(), "Error Information!")
-
+        Log.d(savedInstanceState.toString(), "Error Profile!")
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var view : View = inflater.inflate(R.layout.fragment_information, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        var view : View = inflater.inflate(R.layout.fragment_profile, container, false)
 
         return view
     }

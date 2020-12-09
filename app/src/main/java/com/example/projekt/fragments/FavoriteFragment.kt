@@ -8,17 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.projekt.R
 
-class DetalisFragment : Fragment() {
+class FavoriteFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(savedInstanceState.toString(), "Error Details!")
+        Log.d(savedInstanceState.toString(), "Error Favorite!")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var view : View = inflater.inflate(R.layout.fragment_detalis, container, false)
+        var view : View = inflater.inflate(R.layout.fragment_favorite, container, false)
 
-        return view;
+        return view
     }
 
 }
