@@ -13,6 +13,24 @@
     <string name="text7">Address</string>
     <string name="text8">Phone Number</string>
     <string name="text9">E-mail</string>
+
     <string name="button1">REGISTER</string>
+    <string name="button2">CHANGE</string>
+
+    <string name="text10">Name:</string>
+    <string name="text11">Address:</string>
+    <string name="text12">Phone Number:</string>
+    <string name="text13">E-mail:</string>
+    <string name="text14">$</string>
+
+    <string name="text15">Details</string>
+    <string name="text16">Price:</string>
+    <string name="text17">City:</string>
+    <string name="text18">State:</string>
+    <string name="text19">Area:</string>
+    <string name="text20">Postal Code:</string>
+    <string name="text21">Country:</string>
+    <string name="text22">Reserve:</string>
+    <string name="text23">Mobile Reserve:</string>
 
 </resources>
