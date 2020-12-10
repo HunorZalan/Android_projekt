@@ -9,6 +9,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,12 +27,13 @@ import java.util.regex.Pattern.compile
 
 private lateinit var mUserViewModel : UserViewModel
 private  lateinit var sharedPreferences: SharedPreferences
-private lateinit var imagePath: String
+private lateinit var image : String
 
 class RegisterFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(savedInstanceState.toString(), "Error Register!")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -44,7 +46,7 @@ class RegisterFragment : Fragment() {
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         sharedPreferences = context?.getSharedPreferences("init", Context.MODE_PRIVATE)!!
 
-        change.setOnClickListener{
+        view.change.setOnClickListener{
             // Check runtime permission
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (context?.checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
@@ -64,14 +66,11 @@ class RegisterFragment : Fragment() {
             }
         }
 
-        reg.setOnClickListener{
+        view.reg.setOnClickListener{
             insertDataToDatabase()
         }
 
         return view
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
-
     }
 
     @SuppressLint("CommitPrefEdits")
@@ -79,7 +78,6 @@ class RegisterFragment : Fragment() {
         var ok = true
 
         val username = name_reg
-        val img = img_reg
         val address = address_reg
         val phone = phone_reg
         val email = email_reg
@@ -109,10 +107,12 @@ class RegisterFragment : Fragment() {
 
         if (ok){
             // Create User Object
-            val user = User(0, username.text.toString(), address.text.toString(), email.text.toString(), phone.text.toString(), img.toString())
+            val user = User(0, username.text.toString(), address.text.toString(), email.text.toString(), phone.text.toString(), image)
+
             // Add Data to database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
+
             // Add User to sharedPreferences
             var edit = sharedPreferences.edit()
             edit.clear()
@@ -120,7 +120,9 @@ class RegisterFragment : Fragment() {
             edit.putString("address", address.text.toString())
             edit.putString("email", email.text.toString())
             edit.putString("phone", phone.text.toString())
-            edit.putString("img", img.toString())
+            edit.putString("img", image)
+            edit.apply()
+
             // Navigate Back
             findNavController().navigate(R.id.action_registerFragment_to_listFragment)
         }
@@ -145,7 +147,7 @@ class RegisterFragment : Fragment() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when (requestCode) {
             PERMISSION_CODE -> {
-                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     //permission from popup granted
                     pickImageFromGallery()
                 }
@@ -159,11 +161,11 @@ class RegisterFragment : Fragment() {
     // Handle image pick result
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == IMG_PICK_CODE) {
-            /*imagePath = data?.data.toString()
+            image = data?.data.toString()
             Glide.with(requireContext())
                 .load(data?.data)
-                .into(img_reg)*/
-            img_reg.setImageURI(data?.data)
+                .into(img_reg)
+            //img_reg.setImageURI(data?.data)
         }
     }
 

@@ -33,4 +33,26 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun getUser() : LiveData<Int>{
+        return repository.geUser()
+    }
+
+    fun updateOneUser(name : String, add : String, em : String, ph : String, image : String, userid : Int){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateOneUser(name, add, em, ph, image, userid)
+        }
+    }
+
+    fun deleteUser(user: User){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteUser(user)
+        }
+    }
+
+    fun deleteAllUsers(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteAllUsers()
+        }
+    }
+
 }
