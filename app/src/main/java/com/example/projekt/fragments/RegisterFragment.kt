@@ -43,8 +43,10 @@ class RegisterFragment : Fragment() {
             .load(url or drawble)
             .into(img_reg)*/
 
+        image = "https://icons-for-free.com/download-icon-avatar+person+profile+user+icon-1320086059654790795_512.png"
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         sharedPreferences = context?.getSharedPreferences("init", Context.MODE_PRIVATE)!!
+
 
         view.change.setOnClickListener{
             // Check runtime permission

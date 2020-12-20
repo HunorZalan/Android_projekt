@@ -2,12 +2,16 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragments.DetalisFragment"
         android:background="@color/Snow"
-        android:padding="35sp">
+        android:padding="25sp">
 
         <TextView
             android:id="@+id/title"
@@ -39,7 +43,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginStart="20dp"
             android:text="@string/text6"
-            android:textSize="25sp"
+            android:textSize="15sp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/name_text"
             app:layout_constraintTop_toBottomOf="@id/title"
@@ -80,7 +84,7 @@
             app:layout_constraintStart_toEndOf="@id/address_text"
             android:layout_marginTop="40dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
@@ -105,7 +109,7 @@
             app:layout_constraintStart_toEndOf="@id/price_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
@@ -130,7 +134,7 @@
             app:layout_constraintStart_toEndOf="@id/city_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
@@ -155,7 +159,7 @@
             app:layout_constraintStart_toEndOf="@id/state_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
@@ -180,14 +184,14 @@
             app:layout_constraintStart_toEndOf="@id/area_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
             android:id="@+id/postal_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text19"
+            android:text="@string/text20"
             app:layout_constraintTop_toBottomOf="@id/area_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toStartOf="@id/postal"
@@ -205,14 +209,14 @@
             app:layout_constraintStart_toEndOf="@id/postal_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
             android:id="@+id/country_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text20"
+            android:text="@string/text21"
             app:layout_constraintTop_toBottomOf="@id/postal_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toStartOf="@id/country"
@@ -230,7 +234,7 @@
             app:layout_constraintStart_toEndOf="@id/country_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
@@ -255,14 +259,14 @@
             app:layout_constraintStart_toEndOf="@id/phone_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
             android:id="@+id/reserve_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text19"
+            android:text="@string/text22"
             app:layout_constraintTop_toBottomOf="@id/phone_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toStartOf="@id/reserve"
@@ -280,14 +284,14 @@
             app:layout_constraintStart_toEndOf="@id/reserve_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
         <TextView
             android:id="@+id/mobile_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text19"
+            android:text="@string/text23"
             app:layout_constraintTop_toBottomOf="@id/reserve_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toStartOf="@id/mobile"
@@ -305,8 +309,9 @@
             app:layout_constraintStart_toEndOf="@id/mobile_text"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="@color/DarkOrange"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

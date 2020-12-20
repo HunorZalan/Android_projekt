@@ -53,8 +53,9 @@ class EditFragment : Fragment() {
             view.phone_edit.hint = user[0].phone
             view.email_edit.hint = user[0].email
             Glide.with(requireContext())
-                .load(user[0].img.toString())
+                .load(user[0].img)
                 .into(img_edit)
+            image = user[0].img
         })
 
         sharedPreferences = context?.getSharedPreferences("init", Context.MODE_PRIVATE)!!
