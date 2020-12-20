@@ -16,7 +16,9 @@ import com.example.projekt.models.Restaurant
 import com.example.projekt.viewmodels.RestaurantViewModel
 import kotlinx.android.synthetic.main.costum_row.view.*
 import kotlinx.android.synthetic.main.fragment_list.view.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import java.util.*
+import com.bumptech.glide.Glide
 
 class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
@@ -26,7 +28,7 @@ class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(savedInstanceState.toString(), "Error List!")
+        Log.d(savedInstanceState.toString(), "List!")
 
     }
 
@@ -37,7 +39,7 @@ class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         list = mainViewModel.restaurants.value!!
 
         recycler = view.recyclerview
-        var adapter = RestaurantAdapter(list, this@ListFragment)
+        var adapter = RestaurantAdapter(list, this@ListFragment, requireContext())
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
         recycler.setHasFixedSize(true)

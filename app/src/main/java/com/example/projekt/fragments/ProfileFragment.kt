@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -69,7 +70,7 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         }
 
         recycler = view.recyclerview_fav
-        var adapter = RestaurantAdapter(list, this@ProfileFragment)
+        var adapter = RestaurantAdapter(list, this@ProfileFragment, requireContext())
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
         recycler.setHasFixedSize(true)
@@ -77,6 +78,7 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         view.log_out.setOnClickListener{
             val edit = requireContext().getSharedPreferences("init", Context.MODE_PRIVATE)
             edit.edit().clear().apply()
+
             //mUserViewModel.deleteAllUsers()
             mUserViewModel.getUser().observe(viewLifecycleOwner, ) {
                 mUserViewModel.deleteUser(User(it, view.name_prof.text.toString(), view.address_prof.text.toString(), view.phone_prof.text.toString(), view.email_prof.text.toString(), img_prof.toString()))
@@ -91,7 +93,9 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-
+        var myclickedItem : Restaurant = list[position]
+        mainViewModel.clickedItem = myclickedItem
+        Navigation.findNavController(requireView()).navigate(R.id.action_profileFragment_to_detalisFragment)
     }
 
 }

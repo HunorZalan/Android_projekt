@@ -13,6 +13,16 @@
         android:background="@color/Snow"
         android:padding="25sp">
 
+        <ImageButton
+            android:id="@+id/btn_loc"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_baseline_location" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -61,15 +71,28 @@
 
         <ImageView
             android:id="@+id/img"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/user"
             app:layout_constraintTop_toBottomOf="@id/name"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="50dp"
-            android:scaleX="5"
-            android:scaleY="5"/>
+            android:scaleX="3"
+            android:scaleY="3"
+            android:layout_marginStart="10dp"/>
+
+        <Button
+            android:id="@+id/change_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button2"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/registershape"
+            android:textColor="@color/GreenYellow"/>
 
         <TextView
             android:id="@+id/address_text"

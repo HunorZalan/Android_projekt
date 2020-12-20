@@ -15,7 +15,7 @@ class RestaurantViewModel : ViewModel() {
     fun getAllRestaurantsFromDropBox() {
         val client = OkHttpClient()
         val request =
-            Request.Builder().url("https://www.dropbox.com/s/wjhpe7ho2n9b5sy/restaurants.json?dl=1")
+            Request.Builder().url("https://www.dropbox.com/s/gqpefuwwgrfrd5t/myrestaurants.json?dl=1")
                 .build()
         client.newCall(request).enqueue(object: okhttp3.Callback{
             override fun onFailure(call: Call, e: IOException) {

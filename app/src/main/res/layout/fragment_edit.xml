@@ -8,6 +8,10 @@
     tools:context=".fragments.EditFragment"
     android:background="@color/LightSlateGray"
     android:padding="35sp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -160,5 +164,5 @@
         android:background="@drawable/registershape"
         android:textColor="@color/GreenYellow"/>
 
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

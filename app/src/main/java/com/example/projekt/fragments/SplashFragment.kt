@@ -24,7 +24,7 @@ class SplashFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(savedInstanceState.toString(), "Error Splash!")
+        Log.d(savedInstanceState.toString(), "Splash!")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -32,17 +32,7 @@ class SplashFragment : Fragment() {
         var view : View = inflater.inflate(R.layout.fragment_splash, container, false)
 
         /*view.img.alpha = 0f
-        view.img.animate().setDuration(7000).alpha(1f).withEndAction{
-            sharedPreferences = context?.getSharedPreferences("init", Context.MODE_PRIVATE)!!
-            val init = sharedPreferences.all
-            if (init.isEmpty()){
-                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_registerFragment)
-            }
-            else{
-                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_listFragment)
-            }
-        }*/
-
+        view.img.animate().setDuration(7000).alpha(1f).withEndAction{*/
         mainViewModel.restaurants.observe(viewLifecycleOwner, Observer {
             sharedPreferences = context?.getSharedPreferences("init", Context.MODE_PRIVATE)!!
             val init = sharedPreferences.all

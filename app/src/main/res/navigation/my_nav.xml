@@ -10,6 +10,9 @@
         android:name="com.example.projekt.fragments.DetalisFragment"
         android:label="fragment_detalis"
         tools:layout="@layout/fragment_detalis" >
+        <action
+            android:id="@+id/action_detalisFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
@@ -40,6 +43,11 @@
         <action
             android:id="@+id/action_profileFragment_to_editFragment"
             app:destination="@id/editFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_profileFragment_to_detalisFragment"
+            app:destination="@id/detalisFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"/>
     </fragment>
@@ -81,4 +89,9 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
     </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.projekt.fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
