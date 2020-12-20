@@ -32,17 +32,12 @@ class MapsFragment : Fragment() {
          * user has installed Google Play services and returned to the app.
          */
         //val sydney = LatLng(-34.0, 151.0)
-
-        val coord = LatLng(mainViewModel.clickedItem.lat.toDouble(), mainViewModel.clickedItem.lng.toDouble())
-        googleMap.addMarker(MarkerOptions().position(coord).title("Marker in Restaurants"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(coord))
+        val coordinate = LatLng(mainViewModel.clickedItem.lat.toDouble(), mainViewModel.clickedItem.lng.toDouble())
+        googleMap.addMarker(MarkerOptions().position(coordinate).title("Marker in Restaurants"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(coordinate))
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_maps, container, false)
     }
 

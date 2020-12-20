@@ -34,7 +34,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun getUser() : LiveData<Int>{
-        return repository.geUser()
+        return repository.getUser()
     }
 
     fun updateOneUser(name : String, add : String, em : String, ph : String, image : String, userid : Int){

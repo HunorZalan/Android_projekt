@@ -14,9 +14,8 @@ class RestaurantViewModel : ViewModel() {
 
     fun getAllRestaurantsFromDropBox() {
         val client = OkHttpClient()
-        val request =
-            Request.Builder().url("https://www.dropbox.com/s/gqpefuwwgrfrd5t/myrestaurants.json?dl=1")
-                .build()
+        val request = Request.Builder().url("https://www.dropbox.com/s/gqpefuwwgrfrd5t/myrestaurants.json?dl=1").build()
+
         client.newCall(request).enqueue(object: okhttp3.Callback{
             override fun onFailure(call: Call, e: IOException) {
                 Log.d("Hello", "onFailure:${e.message}")
@@ -34,7 +33,7 @@ class RestaurantViewModel : ViewModel() {
         val jsonArray = JSONArray(response)
         val restaurantSize = jsonArray.length()
 
-        (0 until restaurantSize).forEach { index ->
+        for (index in 0 until restaurantSize) {
             val jsonObject = jsonArray.getJSONObject(index)
             val apiRestaurant = Restaurant(
                 jsonObject.getString("id").toInt(),

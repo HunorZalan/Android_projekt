@@ -19,7 +19,7 @@ class UserRepository(private val userDao : UserDao) {
         userDao.updateOneUser(name, add, em, ph, image, userid)
     }
 
-    fun geUser() : LiveData<Int>{
+    fun getUser() : LiveData<Int>{
         return userDao.getUser()
     }
 

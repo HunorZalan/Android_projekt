@@ -186,5 +186,4 @@ class EditFragment : Fragment() {
             //img_edit.setImageURI(data?.data)
         }
     }
-
 }

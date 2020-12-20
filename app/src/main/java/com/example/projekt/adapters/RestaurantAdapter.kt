@@ -19,9 +19,7 @@ class RestaurantAdapter(private val list : List<Restaurant>, private val listene
     RecyclerView.Adapter<RestaurantAdapter.ExampleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.costum_row,
-            parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.costum_row, parent, false)
         return ExampleViewHolder(itemView)
     }
 
@@ -35,27 +33,20 @@ class RestaurantAdapter(private val list : List<Restaurant>, private val listene
         holder.textView2.text = currentItem.address
         holder.textView3.text = currentItem.price.toString()
 
-        var image1 : String = "https://www.szekelyfoldiinfo.ro/Menu/Szallashelyek/Kepek/marosvasarhely-szallas-lyra_panzio-1.jpg"
+        /*var image1 : String = "https://www.szekelyfoldiinfo.ro/Menu/Szallashelyek/Kepek/marosvasarhely-szallas-lyra_panzio-1.jpg"
         var image2 : String = "http://www.seunkutiandegypt80.com/wp-content/uploads/2020/03/5-Tips-for-Improving-Restaurant-Ambiance.jpg"
         var image3 : String = "https://www.erdelyiutazas.hu/images/photo/36/1-365-44dbe68992b.jpg"
-
-        /*val rand = (0..3).random()
+        val rand = (0..3).random()
         when (rand % 3) {
-            0 -> {
-                Glide.with(context)
+            0 -> { Glide.with(context)
                     .load(image1)
-                    .into(holder.imageView)
-            }
-            1 -> {
-                Glide.with(context)
+                    .into(holder.imageView) }
+            1 -> { Glide.with(context)
                     .load(image2)
-                    .into(holder.imageView)
-            }
-            else -> {
-                Glide.with(context)
+                    .into(holder.imageView) }
+            else -> { Glide.with(context)
                     .load(image3)
-                    .into(holder.imageView)
-            }
+                    .into(holder.imageView) }
         }*/
 
     }
@@ -68,9 +59,7 @@ class RestaurantAdapter(private val list : List<Restaurant>, private val listene
         val textView2: TextView = itemView.findViewById(R.id.address_res)
         val textView3: TextView = itemView.findViewById(R.id.price)
 
-        init {
-            itemView.setOnClickListener(this)
-        }
+        init { itemView.setOnClickListener(this) }
 
         override fun onClick(v: View?) {
             val position = adapterPosition

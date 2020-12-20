@@ -1,168 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.EditFragment"
-    android:background="@color/LightSlateGray"
-    android:padding="35sp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/LightSlateGray">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="@string/text24"
-        android:textSize="40sp"
-        android:inputType="phone"
-        android:textColor="@color/MediumVioletRed"/>
 
-    <TextView
-        android:id="@+id/name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text10"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/name_edit"
-        android:layout_marginTop="40dp"
-        android:textSize="20sp"
-        android:textColor="@color/Gold"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="35sp"
+            tools:context=".fragments.EditFragment">
 
-    <EditText
-        android:id="@+id/name_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="20dp"
-        android:inputType="textPersonName"
-        android:hint="@string/text6"
-        android:textSize="15sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/name_text"
-        app:layout_constraintTop_toBottomOf="@id/title"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:text="@string/text24"
+                android:textColor="@color/MediumVioletRed"
+                android:textSize="40sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/img_edit"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="10dp"
-        android:scaleX="3"
-        android:scaleY="3"
-        android:src="@drawable/user"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_edit" />
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/text10"
+                android:textColor="@color/Gold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/name_edit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <Button
-        android:id="@+id/change_prof"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button2"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/name_edit"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/registershape"
-        android:textColor="@color/GreenYellow"/>
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:hint="@string/text6"
+                android:inputType="textPersonName"
+                android:textSize="15sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/name_text"
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <TextView
-        android:id="@+id/address_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text11"
-        app:layout_constraintTop_toBottomOf="@id/img_edit"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/address_edit"
-        android:layout_marginTop="30dp"
-        android:textSize="20sp"
-        android:textColor="@color/Gold"/>
+            <ImageView
+                android:id="@+id/img_edit"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:src="@drawable/user"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_edit" />
 
-    <EditText
-        android:id="@+id/address_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/text7"
-        android:inputType="textPostalAddress"
-        app:layout_constraintTop_toBottomOf="@id/img_edit"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@id/address_text"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
-        android:textSize="15sp"/>
+            <Button
+                android:id="@+id/change_prof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/registershape"
+                android:text="@string/button2"
+                android:textColor="@color/GreenYellow"
+                android:textSize="20sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_edit" />
 
-    <TextView
-        android:id="@+id/phone_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text12"
-        app:layout_constraintTop_toBottomOf="@id/address_text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/phone_edit"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/Gold" />
+            <TextView
+                android:id="@+id/address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/text11"
+                android:textColor="@color/Gold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/address_edit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_edit" />
 
-    <EditText
-        android:id="@+id/phone_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/text8"
-        app:layout_constraintTop_toBottomOf="@id/address_text"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@id/phone_text"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:textSize="15sp"
-        android:inputType="phone"/>
+            <EditText
+                android:id="@+id/address_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:hint="@string/text7"
+                android:inputType="textPostalAddress"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/address_text"
+                app:layout_constraintTop_toBottomOf="@id/img_edit" />
 
-    <TextView
-        android:id="@+id/email_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text13"
-        app:layout_constraintTop_toBottomOf="@id/phone_text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/email_edit"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/Gold"/>
+            <TextView
+                android:id="@+id/phone_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/text12"
+                android:textColor="@color/Gold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/phone_edit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address_text" />
+
+            <EditText
+                android:id="@+id/phone_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/text8"
+                android:inputType="phone"
+                android:textSize="15sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/phone_text"
+                app:layout_constraintTop_toBottomOf="@id/address_text" />
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/text13"
+                android:textColor="@color/Gold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/email_edit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone_text" />
 
 
-    <EditText
-        android:id="@+id/email_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/text9"
-        app:layout_constraintTop_toBottomOf="@id/phone_text"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@id/email_text"
-        android:layout_marginTop="20dp"
-        android:inputType="textEmailAddress"
-        android:layout_marginStart="20dp"
-        android:textSize="15sp"/>
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/text9"
+                android:inputType="textEmailAddress"
+                android:textSize="15sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/email_text"
+                app:layout_constraintTop_toBottomOf="@id/phone_text" />
 
-    <Button
-        android:id="@+id/edit_prof"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button3"
-        app:layout_constraintTop_toBottomOf="@id/email_edit"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="40dp"
-        android:textSize="25sp"
-        android:background="@drawable/registershape"
-        android:textColor="@color/GreenYellow"/>
+            <Button
+                android:id="@+id/edit_prof"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/registershape"
+                android:text="@string/button3"
+                android:textColor="@color/GreenYellow"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_edit" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

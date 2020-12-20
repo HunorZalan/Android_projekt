@@ -25,11 +25,12 @@ import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 import java.util.regex.Pattern.compile
 
-private lateinit var mUserViewModel : UserViewModel
-private  lateinit var sharedPreferences: SharedPreferences
-private lateinit var image : String
 
 class RegisterFragment : Fragment() {
+
+    private lateinit var mUserViewModel : UserViewModel
+    private  lateinit var sharedPreferences: SharedPreferences
+    private lateinit var image : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,10 +39,6 @@ class RegisterFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view : View = inflater.inflate(R.layout.fragment_register, container, false)
-
-        /*Glide.with(requireContext())
-            .load(url or drawble)
-            .into(img_reg)*/
 
         image = "https://icons-for-free.com/download-icon-avatar+person+profile+user+icon-1320086059654790795_512.png"
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
@@ -57,13 +54,11 @@ class RegisterFragment : Fragment() {
                     // show popup to request runtime permission
                     requestPermissions(permissions, PERMISSION_CODE)
                 }
-                else {
-                    // Permission already grannted
+                else { // Permission already grannted
                     pickImageFromGallery()
                 }
             }
-            else {
-                // system OS is < Mashmallow
+            else { // system OS is < Mashmallow
                 pickImageFromGallery()
             }
         }

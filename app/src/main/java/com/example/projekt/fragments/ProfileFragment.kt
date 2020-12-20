@@ -27,11 +27,11 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 
-private  lateinit var  mUserViewModel : UserViewModel
-private  lateinit var sharedPreferences: SharedPreferences
 
 class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
+    private  lateinit var  mUserViewModel : UserViewModel
+    private  lateinit var sharedPreferences: SharedPreferences
     private lateinit var recycler : RecyclerView
     private val mainViewModel: RestaurantViewModel by activityViewModels()
     private var list : MutableList<Restaurant> = mutableListOf()

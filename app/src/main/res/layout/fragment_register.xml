@@ -1,112 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/Bisque">
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.RegisterFragment"
-        android:background="@color/Bisque"
-        android:padding="35sp">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:text="@string/text3"
-            android:textSize="40sp"
-            android:textColor="@color/Chocolate"/>
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/name_reg"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/text6"
-            android:inputType="textPersonName"
-            app:layout_constraintTop_toBottomOf="@id/title"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="40dp"
-            android:textSize="25sp"/>
+            android:padding="35sp"
+            tools:context=".fragments.RegisterFragment">
 
-        <ImageView
-            android:id="@+id/img_reg"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="10dp"
-            android:scaleX="3"
-            android:scaleY="3"
-            android:src="@drawable/user"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name_reg"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text3"
+                android:textColor="@color/Chocolate"
+                android:textSize="40sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button2"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@id/name_reg"
-            app:layout_constraintRight_toRightOf="parent"
-            android:background="@drawable/registershape"
-            android:textColor="@color/GreenYellow"/>
+            <EditText
+                android:id="@+id/name_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="@string/text6"
+                android:inputType="textPersonName"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
-        <EditText
-            android:id="@+id/address_reg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/text7"
-            android:inputType="textPostalAddress"
-            app:layout_constraintTop_toBottomOf="@id/img_reg"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="30dp"
-            android:textSize="25sp"/>
+            <ImageView
+                android:id="@+id/img_reg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:src="@drawable/user"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_reg" />
 
-        <EditText
-            android:id="@+id/phone_reg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/text8"
-            android:inputType="phone"
-            app:layout_constraintTop_toBottomOf="@id/address_reg"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="20dp"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/registershape"
+                android:text="@string/button2"
+                android:textColor="@color/GreenYellow"
+                android:textSize="20sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_reg" />
 
-        <EditText
-            android:id="@+id/email_reg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="@string/text9"
-            app:layout_constraintTop_toBottomOf="@id/phone_reg"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="20dp"
-            android:textSize="25sp"/>
+            <EditText
+                android:id="@+id/address_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:hint="@string/text7"
+                android:inputType="textPostalAddress"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_reg" />
 
-        <Button
-            android:id="@+id/reg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button1"
-            app:layout_constraintTop_toBottomOf="@id/email_reg"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="40dp"
-            android:textSize="25sp"
-            android:background="@drawable/registershape"
-            android:textColor="@color/GreenYellow"/>
-        </ScrollView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:id="@+id/phone_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/text8"
+                android:inputType="phone"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address_reg" />
+
+            <EditText
+                android:id="@+id/email_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/text9"
+                android:inputType="textEmailAddress"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone_reg" />
+
+            <Button
+                android:id="@+id/reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/registershape"
+                android:text="@string/button1"
+                android:textColor="@color/GreenYellow"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_reg" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
