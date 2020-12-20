@@ -16,5 +16,5 @@ data class Restaurant(
     val reserve_url : String,
     val mobile_reserve_url : String,
     val image_url : String,
-    val fav : Boolean = false
+    var fav : Boolean = false
 )

@@ -30,8 +30,7 @@ class RestaurantAdapter(
         holder.textView3.text = currentItem.price.toString()
     }
     override fun getItemCount() = list.size
-    inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
+    inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val imageView: ImageView = itemView.findViewById(R.id.img_res)
         val textView1: TextView = itemView.findViewById(R.id.name_res)
         val textView2: TextView = itemView.findViewById(R.id.address_res)

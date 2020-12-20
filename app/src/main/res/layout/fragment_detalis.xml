@@ -24,6 +24,16 @@
             android:textSize="40sp"
             android:textColor="@color/Violet"/>
 
+        <ImageButton
+            android:id="@+id/btn_fav"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_baseline_favorite_border" />
+
         <TextView
             android:id="@+id/name_text"
             android:layout_width="wrap_content"

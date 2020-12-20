@@ -48,12 +48,6 @@
                 android:textSize="23sp"
                 android:textColor="@color/DarkGoldenrod"/>
 
-            <Button
-                android:id="@+id/btn_fav"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/ic_baseline_favorite" />
         </RelativeLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

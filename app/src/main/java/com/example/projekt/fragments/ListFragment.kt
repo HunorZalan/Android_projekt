@@ -14,6 +14,7 @@ import com.example.projekt.R
 import com.example.projekt.adapters.RestaurantAdapter
 import com.example.projekt.models.Restaurant
 import com.example.projekt.viewmodels.RestaurantViewModel
+import kotlinx.android.synthetic.main.costum_row.view.*
 import kotlinx.android.synthetic.main.fragment_list.view.*
 import java.util.*
 
@@ -40,7 +41,6 @@ class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
         recycler.setHasFixedSize(true)
-
 
         return view
     }

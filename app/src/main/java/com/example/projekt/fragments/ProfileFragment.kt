@@ -8,12 +8,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.projekt.R
+import com.example.projekt.adapters.RestaurantAdapter
+import com.example.projekt.models.Restaurant
 import com.example.projekt.models.User
+import com.example.projekt.viewmodels.RestaurantViewModel
 import com.example.projekt.viewmodels.UserViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -23,7 +29,11 @@ import kotlinx.android.synthetic.main.fragment_register.view.*
 private  lateinit var  mUserViewModel : UserViewModel
 private  lateinit var sharedPreferences: SharedPreferences
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
+
+    private lateinit var recycler : RecyclerView
+    private val mainViewModel: RestaurantViewModel by activityViewModels()
+    private var list : MutableList<Restaurant> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +62,18 @@ class ProfileFragment : Fragment() {
         view.phone_prof.text = sharedPreferences.getString("phone", "")
         view.email_prof.text = sharedPreferences.getString("email", "")
 
+        for (i in 0 until mainViewModel.restaurants.value!!.size){
+            if (mainViewModel.restaurants.value!![i].fav){
+                list.add(mainViewModel.restaurants.value!![i])
+            }
+        }
+
+        recycler = view.recyclerview_fav
+        var adapter = RestaurantAdapter(list, this@ProfileFragment)
+        recycler.adapter = adapter
+        recycler.layoutManager = LinearLayoutManager(activity)
+        recycler.setHasFixedSize(true)
+
         view.log_out.setOnClickListener{
             val edit = requireContext().getSharedPreferences("init", Context.MODE_PRIVATE)
             edit.edit().clear().apply()
@@ -66,6 +88,10 @@ class ProfileFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onItemClick(position: Int) {
+
     }
 
 }
