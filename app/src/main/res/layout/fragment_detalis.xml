@@ -15,16 +15,6 @@
             android:padding="25sp"
             tools:context=".fragments.DetalisFragment">
 
-            <ImageButton
-                android:id="@+id/btn_loc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/ic_baseline_location"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/title"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
@@ -33,8 +23,32 @@
                 android:textColor="@color/Violet"
                 android:textSize="40sp"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginStart="10dp"/>
+
+            <ImageButton
+                android:id="@+id/btn_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_location"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintRight_toLeftOf="@id/call"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"/>
+
+            <ImageButton
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_call_24"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintLeft_toRightOf="@id/btn_loc"
+                app:layout_constraintRight_toLeftOf="@id/btn_fav"
+                android:layout_marginTop="20dp"/>
+
 
             <ImageButton
                 android:id="@+id/btn_fav"
@@ -42,21 +56,22 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/ic_baseline_favorite_border"
-                app:layout_constraintLeft_toRightOf="@id/title"
+                app:layout_constraintLeft_toRightOf="@id/call"
+                app:layout_constraintTop_toBottomOf="@id/title"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:id="@+id/name_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/text10"
                 android:textColor="@color/DarkMagenta"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@id/name"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title" />
+                app:layout_constraintTop_toBottomOf="@id/call" />
 
             <TextView
                 android:id="@+id/name"
@@ -69,7 +84,7 @@
                 android:textSize="15sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/name_text"
-                app:layout_constraintTop_toBottomOf="@id/title" />
+                app:layout_constraintTop_toBottomOf="@id/call" />
 
             <ImageView
                 android:id="@+id/img"

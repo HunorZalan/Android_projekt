@@ -3,6 +3,7 @@ package com.example.projekt.fragments
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -30,6 +31,7 @@ class DetalisFragment : Fragment() {
 
     private val mainViewModel: RestaurantViewModel by activityViewModels()
     private lateinit var image : String
+    private lateinit var phoneNumber : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,6 +106,12 @@ class DetalisFragment : Fragment() {
                 // system OS is < Mashmallow
                 pickImageFromGallery()
             }
+        }
+
+        phoneNumber = mainViewModel.clickedItem.phone
+        view.call.setOnClickListener {
+            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:$phoneNumber"))
+            startActivity(intent)
         }
 
         return view
