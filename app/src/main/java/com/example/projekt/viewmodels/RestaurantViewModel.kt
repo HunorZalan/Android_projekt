@@ -16,7 +16,7 @@ class RestaurantViewModel : ViewModel() {
         val client = OkHttpClient()
         val request = Request.Builder().url("https://www.dropbox.com/s/gqpefuwwgrfrd5t/myrestaurants.json?dl=1").build()
 
-        client.newCall(request).enqueue(object: okhttp3.Callback{
+        client.newCall(request).enqueue(object: Callback{
             override fun onFailure(call: Call, e: IOException) {
                 Log.d("Hello", "onFailure:${e.message}")
             }

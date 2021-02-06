@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -41,19 +40,19 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         Log.d(savedInstanceState.toString(), "Error Profile!")
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var view : View = inflater.inflate(R.layout.fragment_profile, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val view : View = inflater.inflate(R.layout.fragment_profile, container, false)
 
         // UserViewModel
         mUserViewModel = ViewModelProvider(this).get((UserViewModel::class.java))
-        mUserViewModel.readAllData.observe(viewLifecycleOwner, Observer { user ->
+        mUserViewModel.readAllData.observe(viewLifecycleOwner, { user ->
             // only have 1 user
             /*view.name_prof.text = user[0].username
             view.address_prof.text = user[0].address
             view.phone_prof.text = user[0].phone
             view.email_prof.text = user[0].email*/
             Glide.with(requireContext())
-                .load(user[0].img.toString())
+                .load(user[0].img)
                 .into(img_prof)
         })
 
@@ -70,7 +69,7 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         }
 
         recycler = view.recyclerview_fav
-        var adapter = RestaurantAdapter(list, this@ProfileFragment, requireContext())
+        val adapter = RestaurantAdapter(list, this@ProfileFragment, requireContext())
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
         recycler.setHasFixedSize(true)
@@ -93,8 +92,8 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-        var myclickedItem : Restaurant = list[position]
-        mainViewModel.clickedItem = myclickedItem
+        val myClickedItem : Restaurant = list[position]
+        mainViewModel.clickedItem = myClickedItem
         Navigation.findNavController(requireView()).navigate(R.id.action_profileFragment_to_detalisFragment)
     }
 

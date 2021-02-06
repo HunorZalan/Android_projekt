@@ -13,7 +13,7 @@
             android:layout_height="match_parent"
             android:background="@color/Snow"
             android:padding="25sp"
-            tools:context=".fragments.DetalisFragment">
+            tools:context=".fragments.DetailsFragment">
 
             <TextView
                 android:id="@+id/title"

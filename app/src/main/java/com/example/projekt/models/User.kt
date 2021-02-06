@@ -1,7 +1,6 @@
 package com.example.projekt.models
 
 import android.os.Parcelable
-import android.widget.ImageView
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize

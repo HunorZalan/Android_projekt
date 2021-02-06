@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.costum_row.view.*
 import kotlinx.android.synthetic.main.fragment_list.view.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import java.util.*
-import com.bumptech.glide.Glide
 
 class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
@@ -34,12 +33,12 @@ class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         requireActivity().findViewById<View>(R.id.bottom_nav).visibility = View.VISIBLE
-        var view: View = inflater.inflate(R.layout.fragment_list, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_list, container, false)
 
         list = mainViewModel.restaurants.value!!
-        newList = mutableListOf<Restaurant>()
+        newList = mutableListOf()
         show(list, view)
 
         view.search.addTextChangedListener{
@@ -52,7 +51,7 @@ class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
             else{
                 newList.clear()
                 for (i in list){
-                    if (i.name.toUpperCase().contains(str.toUpperCase())){
+                    if (i.name.toUpperCase(Locale.ROOT).contains(str.toUpperCase(Locale.ROOT))) {
                         newList.add(i)
                     }
                 }
@@ -63,16 +62,16 @@ class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         return view
     }
 
-    fun show(list : MutableList<Restaurant>, view : View){
+    private fun show(list : MutableList<Restaurant>, view : View){
         recycler = view.recyclerview
-        var adapter = RestaurantAdapter(list, this@ListFragment, requireContext())
+        val adapter = RestaurantAdapter(list, this@ListFragment, requireContext())
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
         recycler.setHasFixedSize(true)
     }
 
     override fun onItemClick(position: Int) {
-        var myClickedItem : Restaurant = list[position]
+        val myClickedItem : Restaurant = list[position]
         mainViewModel.clickedItem = myClickedItem
         Navigation.findNavController(requireView()).navigate(R.id.action_listFragment_to_detalisFragment)
     }

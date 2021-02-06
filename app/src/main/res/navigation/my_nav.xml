@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/detalisFragment"
-        android:name="com.example.projekt.fragments.DetalisFragment"
+        android:name="com.example.projekt.fragments.DetailsFragment"
         android:label="fragment_detalis"
         tools:layout="@layout/fragment_detalis" >
         <action

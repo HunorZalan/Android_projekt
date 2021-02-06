@@ -4,15 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.projekt.R
 import com.example.projekt.models.Restaurant
-import kotlinx.android.synthetic.main.costum_row.view.*
 
 
 class RestaurantAdapter(private val list : List<Restaurant>, private val listener : OnItemClickListener, private val context : Context) :
@@ -25,7 +22,6 @@ class RestaurantAdapter(private val list : List<Restaurant>, private val listene
 
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
         val currentItem = list[position]
-        //holder.imageView.setImageResource(R.drawable.food)
         Glide.with(context)
             .load(currentItem.image_url)
             .into(holder.imageView)
@@ -53,6 +49,7 @@ class RestaurantAdapter(private val list : List<Restaurant>, private val listene
 
     override fun getItemCount() = list.size
 
+    @Suppress("DEPRECATION")
     inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val imageView: ImageView = itemView.findViewById(R.id.img_res)
         val textView1: TextView = itemView.findViewById(R.id.name_res)

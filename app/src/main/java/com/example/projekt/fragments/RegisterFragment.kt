@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -37,8 +36,8 @@ class RegisterFragment : Fragment() {
         Log.d(savedInstanceState.toString(), "Register!")
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var view : View = inflater.inflate(R.layout.fragment_register, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val view : View = inflater.inflate(R.layout.fragment_register, container, false)
 
         image = "https://icons-for-free.com/download-icon-avatar+person+profile+user+icon-1320086059654790795_512.png"
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
@@ -47,18 +46,13 @@ class RegisterFragment : Fragment() {
 
         view.change.setOnClickListener{
             // Check runtime permission
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (context?.checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-                    // permission denied
-                    val permissions = arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                    // show popup to request runtime permission
-                    requestPermissions(permissions, PERMISSION_CODE)
-                }
-                else { // Permission already grannted
-                    pickImageFromGallery()
-                }
+            if (context?.checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                // permission denied
+                val permissions = arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                // show popup to request runtime permission
+                requestPermissions(permissions, PERMISSION_CODE)
             }
-            else { // system OS is < Mashmallow
+            else { // Permission already grannted
                 pickImageFromGallery()
             }
         }
@@ -90,7 +84,7 @@ class RegisterFragment : Fragment() {
             ok = false
         }
 
-        val phoneRegex = compile("[\\+0-9\\(\\)\\- ]{7,19}")
+        val phoneRegex = compile("[+0-9()\\- ]{7,19}")
         if (phone.text.isEmpty() || ! phoneRegex.matcher(phone.text).matches()){
             phone.error = "Wrong phone number!"
             ok = false
@@ -108,10 +102,10 @@ class RegisterFragment : Fragment() {
 
             // Add Data to database
             mUserViewModel.addUser(user)
-            Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
+            //Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
 
             // Add User to sharedPreferences
-            var edit = sharedPreferences.edit()
+            val edit = sharedPreferences.edit()
             edit.clear()
             edit.putString("username", username.text.toString())
             edit.putString("address", address.text.toString())

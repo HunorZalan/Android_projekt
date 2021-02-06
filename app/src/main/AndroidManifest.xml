@@ -33,7 +33,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".acivitys.MainActivity"
+            android:name=".acivities.MainActivity"
             android:theme="@style/MyScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
