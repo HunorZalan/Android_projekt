@@ -11,16 +11,33 @@ import com.bumptech.glide.Glide
 import com.example.projekt.R
 import com.example.projekt.models.Restaurant
 
-
 class RestaurantAdapter(private val list : List<Restaurant>, private val listener : OnItemClickListener, private val context : Context) :
-    RecyclerView.Adapter<RestaurantAdapter.ExampleViewHolder>() {
+    RecyclerView.Adapter<RestaurantAdapter.DataViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.costum_row, parent, false)
-        return ExampleViewHolder(itemView)
+    inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+        val imageView: ImageView = itemView.findViewById(R.id.img_res)
+        val textView1: TextView = itemView.findViewById(R.id.name_res)
+        val textView2: TextView = itemView.findViewById(R.id.address_res)
+        val textView3: TextView = itemView.findViewById(R.id.price)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View) {
+            val position = adapterPosition
+            if (adapterPosition != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.costum_row, parent, false)
+        return DataViewHolder(itemView)
+    }
+
+    override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val currentItem = list[position]
         Glide.with(context)
             .load(currentItem.image_url)
@@ -48,23 +65,6 @@ class RestaurantAdapter(private val list : List<Restaurant>, private val listene
     }
 
     override fun getItemCount() = list.size
-
-    @Suppress("DEPRECATION")
-    inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        val imageView: ImageView = itemView.findViewById(R.id.img_res)
-        val textView1: TextView = itemView.findViewById(R.id.name_res)
-        val textView2: TextView = itemView.findViewById(R.id.address_res)
-        val textView3: TextView = itemView.findViewById(R.id.price)
-
-        init { itemView.setOnClickListener(this) }
-
-        override fun onClick(v: View?) {
-            val position = adapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
-            }
-        }
-    }
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)

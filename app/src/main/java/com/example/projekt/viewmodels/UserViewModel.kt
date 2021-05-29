@@ -23,7 +23,11 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
 
     fun addUser(user: User){
         viewModelScope.launch(Dispatchers.IO){
-            repository.addUser(user)
+            try{
+                repository.addUser(user)
+            }catch(e: Exception){
+                // handle Exception
+            }
         }
     }
 
@@ -33,11 +37,11 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun getUser() : LiveData<Int>{
+    fun getUser() : LiveData<Int> {
         return repository.getUser()
     }
 
-    fun updateOneUser(name : String, add : String, em : String, ph : String, image : String, userid : Int){
+    fun updateOneUser(name : String, add : String, em : String, ph : String, image : String, userid : Int) {
         viewModelScope.launch(Dispatchers.IO){
             repository.updateOneUser(name, add, em, ph, image, userid)
         }

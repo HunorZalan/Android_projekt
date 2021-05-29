@@ -4,10 +4,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -29,15 +30,15 @@ import kotlinx.android.synthetic.main.fragment_register.view.*
 
 class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
-    private  lateinit var  mUserViewModel : UserViewModel
-    private  lateinit var sharedPreferences: SharedPreferences
-    private lateinit var recycler : RecyclerView
     private val mainViewModel: RestaurantViewModel by activityViewModels()
+    private lateinit var  mUserViewModel : UserViewModel
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var recycler : RecyclerView
     private var list : MutableList<Restaurant> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(savedInstanceState.toString(), "Error Profile!")
+        Log.d(savedInstanceState.toString(), "Profile!")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -79,9 +80,10 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
             edit.edit().clear().apply()
 
             //mUserViewModel.deleteAllUsers()
-            mUserViewModel.getUser().observe(viewLifecycleOwner, ) {
+            mUserViewModel.getUser().observe(viewLifecycleOwner) {
                 mUserViewModel.deleteUser(User(it, view.name_prof.text.toString(), view.address_prof.text.toString(), view.phone_prof.text.toString(), view.email_prof.text.toString(), img_prof.toString()))
             }
+            requireActivity().findViewById<View>(R.id.bottom_nav).visibility = View.GONE
             findNavController().navigate(R.id.action_profileFragment_to_splashFragment)
         }
         view.edit.setOnClickListener{

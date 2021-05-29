@@ -23,9 +23,10 @@ import java.util.*
 class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
     private lateinit var recycler : RecyclerView
-    private val mainViewModel: RestaurantViewModel by activityViewModels()
     private lateinit var list : MutableList<Restaurant>
     private lateinit var newList : MutableList<Restaurant>
+
+    private val mainViewModel: RestaurantViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +44,7 @@ class ListFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
 
         view.search.addTextChangedListener{
             val str : String = view.search.text.toString()
-            //Log.d(str,"Search:$str")
+            Log.d(str,"Search:$str")
 
             if (str.isEmpty()){
                 show(list, view)

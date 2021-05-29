@@ -39,4 +39,9 @@
     <string name="text24">Edit Profile</string>
     <string name="text25">Search</string>
 
+    <string name="call">Call</string>
+    <string name="map">Map</string>
+    <string name="fav">Fav</string>
+    <string name="prof">Profile</string>
+
 </resources>

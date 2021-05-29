@@ -10,7 +10,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/Snow"
             android:padding="25sp"
             tools:context=".fragments.DetailsFragment">
@@ -36,7 +36,8 @@
                 app:layout_constraintTop_toBottomOf="@id/title"
                 app:layout_constraintRight_toLeftOf="@id/call"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/map" />
 
             <ImageButton
                 android:id="@+id/call"
@@ -47,7 +48,8 @@
                 app:layout_constraintTop_toBottomOf="@id/title"
                 app:layout_constraintLeft_toRightOf="@id/btn_loc"
                 app:layout_constraintRight_toLeftOf="@id/btn_fav"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/call" />
 
 
             <ImageButton
@@ -59,7 +61,8 @@
                 app:layout_constraintLeft_toRightOf="@id/call"
                 app:layout_constraintTop_toBottomOf="@id/title"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/fav" />
 
             <TextView
                 android:id="@+id/name_text"
@@ -96,7 +99,8 @@
                 android:scaleY="3"
                 android:src="@drawable/user"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name" />
+                app:layout_constraintTop_toBottomOf="@id/name"
+                android:contentDescription="@string/prof" />
 
             <Button
                 android:id="@+id/change_img"

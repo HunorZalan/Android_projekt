@@ -22,11 +22,14 @@ import kotlinx.android.synthetic.main.fragment_edit.*
 import kotlinx.android.synthetic.main.fragment_edit.view.*
 import java.util.regex.Pattern.compile
 
-private lateinit var mUserViewModel : UserViewModel
-private  lateinit var sharedPreferences: SharedPreferences
-private lateinit var image : String
+private const val IMG_PICK_CODE = 1000 // img pick code
+private const val PERMISSION_CODE = 1001 // Permission code
 
 class EditFragment : Fragment() {
+
+    private lateinit var mUserViewModel : UserViewModel
+    private  lateinit var sharedPreferences: SharedPreferences
+    private lateinit var image : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -139,11 +142,6 @@ class EditFragment : Fragment() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, IMG_PICK_CODE)
-    }
-
-    companion object {
-        private const val IMG_PICK_CODE = 1000 // img pick code
-        private const val PERMISSION_CODE = 1001 // Permission code
     }
 
     // Handle permission request result

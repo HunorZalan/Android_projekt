@@ -51,7 +51,8 @@
                 android:textSize="15sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/name_text"
-                app:layout_constraintTop_toBottomOf="@id/title" />
+                app:layout_constraintTop_toBottomOf="@id/title"
+                android:importantForAutofill="no" />
 
             <ImageView
                 android:id="@+id/img_edit"
@@ -63,7 +64,8 @@
                 android:scaleY="3"
                 android:src="@drawable/user"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name_edit" />
+                app:layout_constraintTop_toBottomOf="@id/name_edit"
+                android:contentDescription="@string/prof" />
 
             <Button
                 android:id="@+id/change_prof"
@@ -102,7 +104,8 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toEndOf="@id/address_text"
-                app:layout_constraintTop_toBottomOf="@id/img_edit" />
+                app:layout_constraintTop_toBottomOf="@id/img_edit"
+                android:importantForAutofill="no" />
 
             <TextView
                 android:id="@+id/phone_text"
@@ -127,7 +130,8 @@
                 android:textSize="15sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toEndOf="@id/phone_text"
-                app:layout_constraintTop_toBottomOf="@id/address_text" />
+                app:layout_constraintTop_toBottomOf="@id/address_text"
+                android:importantForAutofill="no" />
 
             <TextView
                 android:id="@+id/email_text"
@@ -153,7 +157,8 @@
                 android:textSize="15sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toEndOf="@id/email_text"
-                app:layout_constraintTop_toBottomOf="@id/phone_text" />
+                app:layout_constraintTop_toBottomOf="@id/phone_text"
+                android:importantForAutofill="no" />
 
             <Button
                 android:id="@+id/edit_prof"

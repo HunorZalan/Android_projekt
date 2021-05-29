@@ -13,10 +13,9 @@ import androidx.navigation.Navigation
 import com.example.projekt.R
 import com.example.projekt.viewmodels.RestaurantViewModel
 
-private  lateinit var sharedPreferences: SharedPreferences
-
 class SplashFragment : Fragment() {
 
+    private  lateinit var sharedPreferences: SharedPreferences
     private val mainViewModel: RestaurantViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +24,6 @@ class SplashFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        requireActivity().findViewById<View>(R.id.bottom_nav).visibility = View.GONE
         val view : View = inflater.inflate(R.layout.fragment_splash, container, false)
 
         /*view.img.alpha = 0f

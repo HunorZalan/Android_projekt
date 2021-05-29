@@ -14,7 +14,8 @@
         <ImageView
             android:id="@+id/img_res"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="100dp"
+            android:contentDescription="@string/prof" />
 
         <RelativeLayout
             android:layout_width="match_parent"

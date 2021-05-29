@@ -24,6 +24,8 @@ import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 import java.util.regex.Pattern.compile
 
+private const val IMG_PICK_CODE = 1000 // img pick code
+private const val PERMISSION_CODE = 1001 // Permission code
 
 class RegisterFragment : Fragment() {
 
@@ -127,11 +129,6 @@ class RegisterFragment : Fragment() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, IMG_PICK_CODE)
-    }
-
-    companion object {
-        private const val IMG_PICK_CODE = 1000 // img pick code
-        private const val PERMISSION_CODE = 1001 // Permission code
     }
 
     // Handle permission request result

@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.projekt.R
@@ -20,11 +21,15 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_detalis.*
 import kotlinx.android.synthetic.main.fragment_detalis.view.price
 
+
+private const val IMG_PICK_CODE = 1000 // img pick code
+private const val PERMISSION_CODE = 1001 // Permission code
+
 class DetailsFragment : Fragment() {
 
-    private val mainViewModel: RestaurantViewModel by activityViewModels()
     private lateinit var image : String
     private lateinit var phoneNumber : String
+    private val mainViewModel: RestaurantViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +39,13 @@ class DetailsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view : View = inflater.inflate(R.layout.fragment_detalis, container, false)
+
+        /*val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                Log.d("Hello","Back")
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
 
         if (mainViewModel.clickedItem.fav){
             view.btn_fav.setImageResource(R.drawable.ic_baseline_favorite)
@@ -109,11 +121,6 @@ class DetailsFragment : Fragment() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, IMG_PICK_CODE)
-    }
-
-    companion object {
-        private const val IMG_PICK_CODE = 1000 // img pick code
-        private const val PERMISSION_CODE = 1001 // Permission code
     }
 
     // Handle permission request result

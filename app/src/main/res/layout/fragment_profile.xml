@@ -61,7 +61,8 @@
                 android:src="@drawable/user"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name_prof" />
+                app:layout_constraintTop_toBottomOf="@id/name_prof"
+                android:contentDescription="@string/prof" />
 
             <TextView
                 android:id="@+id/address_text"
