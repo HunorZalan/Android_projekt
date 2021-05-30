@@ -11,7 +11,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.projekt.R
@@ -20,7 +19,6 @@ import kotlinx.android.synthetic.main.fragment_detalis.view.*
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_detalis.*
 import kotlinx.android.synthetic.main.fragment_detalis.view.price
-
 
 private const val IMG_PICK_CODE = 1000 // img pick code
 private const val PERMISSION_CODE = 1001 // Permission code
@@ -34,18 +32,10 @@ class DetailsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(savedInstanceState.toString(), "Details!")
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view : View = inflater.inflate(R.layout.fragment_detalis, container, false)
-
-        /*val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                Log.d("Hello","Back")
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
 
         if (mainViewModel.clickedItem.fav){
             view.btn_fav.setImageResource(R.drawable.ic_baseline_favorite)

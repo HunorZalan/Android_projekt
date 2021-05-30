@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
@@ -34,7 +33,7 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
     private lateinit var  mUserViewModel : UserViewModel
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var recycler : RecyclerView
-    private var list : MutableList<Restaurant> = mutableListOf()
+    private lateinit var list : MutableList<Restaurant>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +62,7 @@ class ProfileFragment : Fragment(), RestaurantAdapter.OnItemClickListener {
         view.phone_prof.text = sharedPreferences.getString("phone", "")
         view.email_prof.text = sharedPreferences.getString("email", "")
 
+        list = mutableListOf()
         for (i in 0 until mainViewModel.restaurants.value!!.size){
             if (mainViewModel.restaurants.value!![i].fav){
                 list.add(mainViewModel.restaurants.value!![i])
